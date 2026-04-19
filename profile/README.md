@@ -1,4 +1,21 @@
-## 1. Most Common Use Case
+# **Overview**
+ - Different from traditional education strategies, this project emphasizes the importance of motivation-driven learning and gaining hands-on experience and advanced motivation through building projects. The learning path is designed as a tree structure, where each node represents a specific topic or skill. Users can choose their own learning path based on their interests and goals, and the system will provide personalized guidance and resources to help them achieve their objectives based on a top-to-down approach.
+# **Philosophy**
+ - The core philosophy of this project is to encourage users to get rid of the current corrupted and inefficient education system and form a personalized comfort zone for learning and building. And finally achieve the real democratization of education and opportunities.
+ - What we are against:
+    1. The overestimated significance of study
+    2. The one-size-fits-all and extremely rigid and corrupted education system
+    3. Education systems that are designed for the convenience of teachers and education bureaus rather than students
+    4. The lack of hands-on experience and motivation-driven learning
+    5. Some popular and widely accepted perspectives about learning and education
+ - What we are for:
+    1. The underestimated significance of building and hands-on experience
+    2. The personalized and flexible learning paths based on users' interests and goals
+    3. Education systems that are designed for the convenience of students rather than teachers and education bureaus
+    4. The importance of motivation-driven learning and it should be way more crucial than study
+    5. Some unpopular but more accurate perspectives about learning and education
+
+## 2. Most Common Use Case
 
 ```mermaid
 sequenceDiagram
@@ -103,4 +120,59 @@ sequenceDiagram
     c5->>c4: Gets local storage
     c5->>c6: Sends updated data
     c4->>c2: Sends done signal
+```
+
+## 3. Best Practices Of Nodes Making Up A Tree
+
+```mermaid
+mindmap
+  root(Root Node:
+    Topic: Full Stack
+    Prerequisites: Understanding how frontend and backend work
+    Signs of Completion: Built a full-stack project independently
+    Property: Mandatory
+    Related Nodes: Desktop Development, Mobile Development, Game Development, AI Agent Development
+  )
+    subnode1(Node:
+    Topic: Frontend
+    Prerequisites: Understanding of HTML, CSS, JavaScript, and frontend frameworks
+    Signs of Completion: Built a frontend project independently
+    Property: Mandatory
+  )
+        subnode1.1(Node:
+        Topic: React
+        Prerequisites: Understanding of JavaScript and React framework
+        Signs of Completion: Built a React project independently
+        Property: Optional But Finishing At Least One Subnode1.x Is Required
+        Related Nodes: React Native, Next.js
+        )
+        subnode1.2(Node:
+        Topic: Vue
+        Prerequisites: Understanding of JavaScript and Vue framework
+        Signs of Completion: Built a Vue project independently
+        Property: Optional But Finishing At Least One Subnode1.x Is Required
+        Related Nodes: Vue Native, Nuxt.js
+
+        )
+    subnode2(Node:
+    Topic: Backend
+    Prerequisites: Understanding of programming languages, databases, and backend frameworks
+    Signs of Completion: Built a backend project independently
+    Property: Mandatory
+    Related Nodes: DevOps, Cloud Computing, Security
+    )
+        subnode2.1(Node:
+        Topic: Database
+        Prerequisites: Understanding of database concepts and SQL
+        Signs of Completion: Built a database and performed CRUD operations independently
+        Property: Mandatory
+        Related Nodes: MySQL, PostgreSQL, MongoDB
+        )
+        subnode2.2(Node:
+        Topic: API Development
+        Prerequisites: Understanding of RESTful APIs and backend frameworks
+        Signs of Completion: Built a RESTful API and integrated it with the frontend
+        Property: Mandatory
+        Related Nodes: Express.js, Django, Flask
+        )
 ```
