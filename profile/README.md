@@ -63,3 +63,13 @@ This version incorporates targeted Copilot **security and performance fixes**:
 - Copilot-suggested completions are gated through the same Zod schemas as external inputs; no raw Copilot output is trusted at a boundary.
 - Observation loop performance is improved by batching MCP signal flushes rather than emitting on every tick.
 - GoalContext objects are treated as immutable snapshots; Copilot-assisted mutations that bypass the canonical update path are rejected.
+
+## v3.1 Traversal Contract
+- DDRT is the preferred traversal model for the next iteration: demand collection, designated frontier resolution, recursive traversal, and trace preservation.
+- GoalContext is the shared state envelope that carries the active goal, constraints, and resolution state across project, session, thread, and node scopes.
+- The Passive Observation Layer listens for MCP-side signals and renderer-side signals without mutating user-facing state directly.
+- Hard blockers should be represented as latent queue entries until new evidence changes the frontier.
+- LLM-facing outputs must remain schema-validated at the boundary; speculative payload shapes are not allowed.
+- Every node transition should be auditable through node_transition records and EventTrace data.
+- Native Renderer hooks are part of the runtime contract, but this repository stays documentation-first and policy-oriented.
+- Performance improvements and storage changes belong in the backend and are documented there, not implemented here.
